@@ -1,53 +1,54 @@
-export interface UnifiedApiModel {
+// Protocol-to-model mapping is validated in docs/unified-interface-model.md before changing this shape.
+export interface UnifiedInterfaceModel {
   service: string;
-  operations: ApiOperation[];
-  schemas: Record<string, ApiSchema>;
+  operations: InterfaceOperation[];
+  schemas: Record<string, InterfaceSchema>;
 }
 
-export interface ApiOperation {
+export interface InterfaceOperation {
   id: string;
-  method: string;
-  path: string;
+  action: string;
+  target: string;
   summary?: string;
   description?: string;
   deprecated?: boolean;
-  parameters: ApiParameter[];
-  requestBody?: ApiRequestBody;
-  responses: ApiResponse[];
+  parameters: InterfaceParameter[];
+  requestBody?: InterfaceRequestBody;
+  responses: InterfaceResponse[];
 }
 
-export interface ApiParameter {
+export interface InterfaceParameter {
   name: string;
   in: "path" | "query" | "header" | "cookie";
   required: boolean;
   description?: string;
-  schema: ApiSchema;
+  schema: InterfaceSchema;
 }
 
-export interface ApiRequestBody {
+export interface InterfaceRequestBody {
   description?: string;
   required: boolean;
-  content: ApiMediaType[];
+  content: InterfaceMediaType[];
 }
 
-export interface ApiResponse {
-  status: string;
+export interface InterfaceResponse {
+  status?: string;
   description?: string;
-  content: ApiMediaType[];
+  content: InterfaceMediaType[];
 }
 
-export interface ApiMediaType {
+export interface InterfaceMediaType {
   mediaType: string;
-  schema: ApiSchema;
+  schema: InterfaceSchema;
 }
 
-// A named schema is stored once in UnifiedApiModel.schemas and pointed to via
+// A named schema is stored once in UnifiedInterfaceModel.schemas and pointed to via
 // { type: "ref", name } everywhere it's reused, mirroring OpenAPI's components/schemas.
-export type ApiSchema =
+export type InterfaceSchema =
   | { type: "string"; enum?: string[]; format?: string; example?: unknown }
   | { type: "number" | "integer"; enum?: number[]; format?: string; example?: unknown }
   | { type: "boolean"; example?: unknown }
-  | { type: "array"; items: ApiSchema }
-  | { type: "object"; properties: Record<string, ApiSchema>; required: string[] }
+  | { type: "array"; items: InterfaceSchema }
+  | { type: "object"; properties: Record<string, InterfaceSchema>; required: string[] }
   | { type: "ref"; name: string }
   | { type: "unknown" };

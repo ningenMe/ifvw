@@ -19,7 +19,7 @@ sources:
 
 - `sources.yaml` のようなsource設定ファイルのスキーマを定義する
 - 設定ファイルを読み込み、各sourceのURLからOpenAPI specificationを取得する
-- 取得したspecificationを `005-implement-openapi-parser` に渡し、Unified API Modelを構築する
+- 取得したspecificationを `005-implement-openapi-parser` に渡し、Unified Interface Modelを構築する
 - source取得失敗時のエラーハンドリング(取得できないservice/URLがあっても他serviceは表示できるようにする)
 
 ## 完了条件

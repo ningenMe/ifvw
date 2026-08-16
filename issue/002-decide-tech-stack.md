@@ -12,7 +12,7 @@ MVPを実装するにあたり、OpenAPIのパース・Web UI・横断検索・T
 - 静的サイトとしてビルド可能なフロントエンドの言語・フレームワークを選定する
 - CLI(generateコマンド)を実装する言語・ランタイムを選定する(フロントエンドと共通のランタイムにできるか検討する)
 - OpenAPIのパースに使うライブラリを調査・選定する
-- 生成時にUnified API Modelをどう静的サイトへ埋め込むか(JSONバンドル等)を検討する
+- 生成時にUnified Interface Modelをどう静的サイトへ埋め込むか(JSONバンドル等)を検討する
 - 選定理由をドキュメント化する
 
 ## 完了条件
@@ -38,6 +38,6 @@ MVPを実装するにあたり、OpenAPIのパース・Web UI・横断検索・T
 | Package Manager | npm                                       |
 | 配布            | npm → `npx ifvw`                          |
 
-設計上、OpenAPI固有の型をUIに直接渡さず `Source → Parser → Unified API Model → UI` の責務分離を行う(`004-define-unified-api-model` 参照)。これにより将来的なProtobuf / gRPC / GraphQL / AsyncAPI対応を可能にする。
+設計上、OpenAPI固有の型をUIに直接渡さず `Source → Parser → Unified Interface Model → UI` の責務分離を行う(`004-define-unified-api-model` 参照)。これにより将来的なProtobuf / gRPC / GraphQL / AsyncAPI対応を可能にする。
 
 詳細はREADMEにも記載。

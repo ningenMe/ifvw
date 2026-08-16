@@ -27,7 +27,7 @@ interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検�
 
 常駐サーバーは持たず、CLIが `sources.yaml` を読んでOpenAPI一式をfetchし、静的サイト(HTML/JS)を生成する方式。生成物はnginx/S3/GitHub Pagesなど任意の場所にそのまま配置できる。
 
-設計上、OpenAPI固有の型をUIに直接渡さず `Source → Parser → Unified API Model → UI` の責務分離を行い、将来的なProtobuf / gRPC / GraphQL / AsyncAPI対応を可能にする。
+設計上、OpenAPI固有の型をUIに直接渡さず `Source → Parser → Unified Interface Model → UI` の責務分離を行い、将来的なProtobuf / gRPC / GraphQL / AsyncAPI対応を可能にする。
 
 詳細は [issue/002-decide-tech-stack.md](./issue/002-decide-tech-stack.md) を参照。
 
@@ -36,10 +36,12 @@ interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検�
 ```
 src/
 ├── cli/    CLIエントリポイント
-└── core/   Unified API Model(protocol非依存の内部モデル)
+└── core/   Unified Interface Model(protocol非依存の内部モデル)
 ```
 
 OpenAPI parser(`parsers/openapi`)・静的サイト生成(`site`)は、各タスク([005](./issue/005-implement-openapi-parser.md), [011](./issue/011-generate-static-site.md)ほか)に着手するタイミングで追加する。中身のないディレクトリを先に置くことはしない。
+
+Unified Interface Modelの設計とprotocolごとの対応関係は [docs/unified-interface-model.md](./docs/unified-interface-model.md) を参照。
 
 ## 開発
 
