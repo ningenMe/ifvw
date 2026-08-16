@@ -20,3 +20,11 @@
 ## 完了条件
 
 - 空のディレクトリ構成 + 最低限のビルド/起動コマンドが通る状態でREADMEに手順が記載されている
+
+## 決定
+
+npm workspacesによる複数パッケージ構成ではなく、単一npmパッケージ(`ifvw`)の中で `src/core` `src/parsers/openapi` `src/cli` `src/site` にディレクトリを分けて疎結合にする形にした。`npx ifvw` で配布する1パッケージ構成にした方がMVP段階ではシンプルなため。
+
+Lint/Formatは依存最小方針に合わせ、ESLintは導入せず `tsc --strict` (型チェック) と Prettier (フォーマットのみ) に絞った。
+
+ビルドはNode向け(`tsconfig.json`)とブラウザ向け(`tsconfig.browser.json`)でtscを2回叩く構成。ブラウザ側は素のESモジュールとして出力し、バンドラは使わない。詳細はREADMEを参照。
