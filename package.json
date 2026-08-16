@@ -1,11 +1,15 @@
 {
   "name": "ifvw",
   "version": "0.0.0",
-  "description": "Unified API Explorer for microservices — browse and search OpenAPI (and beyond) specs from one place.",
+  "description": "Interface viewer — browse and search OpenAPI (and beyond) definitions from one UI.",
   "license": "MIT",
   "type": "module",
+  "bin": {
+    "ifvw": "./bin/ifvw.js"
+  },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "engines": {
     "node": ">=20"

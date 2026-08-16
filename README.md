@@ -31,10 +31,22 @@ interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検�
 
 詳細は [issue/002-decide-tech-stack.md](./issue/002-decide-tech-stack.md) を参照。
 
+## ディレクトリ構成
+
+現時点でスキャフォールドされているのは `src/cli`(CLIエントリポイント)のみ。
+Unified API Model(`core`)・parser(`parsers/openapi`)・静的サイト生成(`site`)は、各タスク([issue/004](./issue/004-define-unified-api-model.md), [005](./issue/005-implement-openapi-parser.md), [011](./issue/011-generate-static-site.md)ほか)に着手するタイミングで、そのとき固まった設計で追加する。中身のないディレクトリを先に置くことはしない。
+
 ## 開発
 
 ```sh
 npm install
 npm run build   # dist/ を生成
 npm test
+```
+
+CLIをローカルで試す:
+
+```sh
+npm run build
+node bin/ifvw.js --help
 ```
