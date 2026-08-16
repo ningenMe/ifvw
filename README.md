@@ -1,8 +1,8 @@
-# ifvw
+# ifvw (Interface Viewer)
 
-複数のマイクロサービスに分散したAPI仕様を、1つのUIで横断して探索できるAPI Explorer。
+interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検索できるビューア。
 
-Swagger UIの代替ではなく、Swagger UIを束ねたAPI Explorer / API Catalog。「このシステムにはどんなAPIが存在するのか?」を最初に開く場所を目指すOSS。
+核はSwagger UIのような単一interfaceのビューア。複数のsource(サービス/プロダクト)を1つのUIに集約して横断的に見られることは、その上に乗るoptionalな機能という位置づけ(マイクロサービス環境での利用はその代表的な活用シーン)。
 
 詳しくはコンセプト([issue #1](https://github.com/ningenMe/ifvw/issues/1))と、タスク分解([issue/](./issue))を参照。
 
