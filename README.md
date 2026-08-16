@@ -35,6 +35,6 @@ Swagger UIの代替ではなく、Swagger UIを束ねたAPI Explorer / API Catal
 
 ```sh
 npm install
-npm run build   # dist/(CLI/Node側)と dist-browser/(静的サイトのフロントエンド)を生成
+npm run build   # dist/ を生成
 npm test
 ```
