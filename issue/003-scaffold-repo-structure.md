@@ -20,3 +20,13 @@
 ## 完了条件
 
 - 空のディレクトリ構成 + 最低限のビルド/起動コマンドが通る状態でREADMEに手順が記載されている
+
+## 決定
+
+npm workspacesによる複数パッケージ構成ではなく、単一npmパッケージ(`ifvw`)の中でディレクトリを分けて疎結合にする形にした。`npx ifvw` で配布する1パッケージ構成にした方がMVP段階ではシンプルなため。
+
+Lint/Formatは依存最小方針に合わせ、ESLintは導入せず `tsc --strict` (型チェック) と Prettier (フォーマットのみ) に絞った。
+
+Unified API Model(`core`)・OpenAPI parser(`parsers/openapi`)・静的サイト生成(`site`)は、この時点では作らない。プロダクトの立ち位置([issue #1](https://github.com/ningenMe/ifvw/issues/1)、「1つのinterfaceを気持ちよく見るビューアが核」への再整理)を踏まえた設計がまだ固まっていないため、中身のない・後で名前が変わる可能性のあるプレースホルダを先にコミットするのはやめた。実装は各タスク([004](./004-define-unified-api-model.md), [005](./005-implement-openapi-parser.md), [011](./011-generate-static-site.md)ほか)に着手するタイミングでちゃんと設計してから追加する。
+
+このスキャフォールドで実際に用意したのは `src/cli`(CLIエントリポイント、Unified API Modelに依存しないので先に作れる)のみ。ビルド(`tsc --strict`)・テスト(`node:test`)・フォーマット(Prettier)・CLI起動(`node bin/ifvw.js --help`)まで実際に動作確認済み。

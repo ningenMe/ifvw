@@ -1,0 +1,31 @@
+{
+  "name": "ifvw",
+  "version": "0.0.0",
+  "description": "Interface viewer — browse and search OpenAPI (and beyond) definitions from one UI.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ifvw": "./bin/ifvw.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test test/*.test.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0"
+  }
+}
