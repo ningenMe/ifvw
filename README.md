@@ -35,11 +35,12 @@ interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検�
 
 ```
 src/
-├── cli/    CLIエントリポイント
-└── core/   InterfaceOperation(protocol非依存の内部モデル)
+├── cli/                CLIエントリポイント
+├── core/                InterfaceOperation(protocol非依存の内部モデル)
+└── parsers/openapi/     OpenAPI -> InterfaceOperation[] のparser
 ```
 
-OpenAPI parser(`parsers/openapi`)・静的サイト生成(`site`)は、各タスク([005](./issue/005-implement-openapi-parser.md), [011](./issue/011-generate-static-site.md)ほか)に着手するタイミングで追加する。中身のないディレクトリを先に置くことはしない。内部モデルの詳細・変遷は [issue/004](./issue/004-define-unified-api-model.md) を参照。
+静的サイト生成(`site`)は [011](./issue/011-generate-static-site.md) に着手するタイミングで追加する。中身のないディレクトリを先に置くことはしない。内部モデルの詳細・変遷は [issue/004](./issue/004-define-unified-api-model.md)、parserの詳細は [issue/005](./issue/005-implement-openapi-parser.md) を参照。
 
 ## 開発
 
