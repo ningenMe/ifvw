@@ -6,6 +6,9 @@ interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検�
 
 詳しくはコンセプト([issue #1](https://github.com/ningenMe/ifvw/issues/1))と、タスク分解([issue/](./issue))を参照。
 
+> [!NOTE]
+> 開発初期段階(pre-alpha)。MVPの機能([issue #1](https://github.com/ningenMe/ifvw/issues/1)参照)はまだ揃っておらず、`ifvw`コマンドは現状 `--help`/`--version` のみ動作する。OpenAPI仕様のパースまでは実装済み([issue/005](./issue/005-implement-openapi-parser.md))。
+
 ## 技術スタック
 
 依存を極力少なくする方針。TypeScript / Node.js / Web標準APIを中心に構築し、ライブラリは必要なものだけ採用する。
@@ -56,3 +59,11 @@ CLIをローカルで試す:
 npm run build
 node bin/ifvw.js --help
 ```
+
+## License
+
+[MIT](./LICENSE)
+
+## Security
+
+脆弱性を見つけた場合は公開issueではなく、[SECURITY.md](./SECURITY.md)の手順で報告してください。
