@@ -36,12 +36,10 @@ interface定義(まずはOpenAPI)を、1つのUIで気持ちよく閲覧・検�
 ```
 src/
 ├── cli/    CLIエントリポイント
-└── core/   Unified Interface Model(protocol非依存の内部モデル)
+└── core/   InterfaceOperation(protocol非依存の内部モデル)
 ```
 
-OpenAPI parser(`parsers/openapi`)・静的サイト生成(`site`)は、各タスク([005](./issue/005-implement-openapi-parser.md), [011](./issue/011-generate-static-site.md)ほか)に着手するタイミングで追加する。中身のないディレクトリを先に置くことはしない。
-
-Unified Interface Modelは最初から作り込まず、`id`/`action`/`target`程度の最小限から始めて、parser([005](./issue/005-implement-openapi-parser.md))やUI([008](./issue/008-implement-api-detail-view.md))を実装しながら実際に必要になったフィールドを足していく。
+OpenAPI parser(`parsers/openapi`)・静的サイト生成(`site`)は、各タスク([005](./issue/005-implement-openapi-parser.md), [011](./issue/011-generate-static-site.md)ほか)に着手するタイミングで追加する。中身のないディレクトリを先に置くことはしない。内部モデルの詳細・変遷は [issue/004](./issue/004-define-unified-api-model.md) を参照。
 
 ## 開発
 
