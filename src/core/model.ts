@@ -4,8 +4,8 @@ export interface UnifiedInterfaceModel {
 
 export interface InterfaceOperation {
   id: string;
-  method: string;
-  path: string;
+  action: string;
+  target: string;
   description?: string;
   deprecated?: boolean;
 }

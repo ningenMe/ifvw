@@ -41,7 +41,7 @@ src/
 
 OpenAPI parser(`parsers/openapi`)・静的サイト生成(`site`)は、各タスク([005](./issue/005-implement-openapi-parser.md), [011](./issue/011-generate-static-site.md)ほか)に着手するタイミングで追加する。中身のないディレクトリを先に置くことはしない。
 
-Unified Interface Modelは最初から作り込まず、`id`/`method`/`path`程度の最小限から始めて、parser([005](./issue/005-implement-openapi-parser.md))やUI([008](./issue/008-implement-api-detail-view.md))を実装しながら実際に必要になったフィールドを足していく。
+Unified Interface Modelは最初から作り込まず、`id`/`action`/`target`程度の最小限から始めて、parser([005](./issue/005-implement-openapi-parser.md))やUI([008](./issue/008-implement-api-detail-view.md))を実装しながら実際に必要になったフィールドを足していく。
 
 ## 開発
 
