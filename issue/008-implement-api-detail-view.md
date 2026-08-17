@@ -18,7 +18,7 @@ Swagger UIに近いUIで、選択したエンドポイントの詳細情報を�
   - enum
   - examples
   - deprecatedであることの表示
-- Unified API Modelを入力として描画する(protocol固有の情報に依存しない実装にする)
+- Unified Interface Modelを入力として描画する(protocol固有の情報に依存しない実装にする)
 
 ## 完了条件
 

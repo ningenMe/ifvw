@@ -5,7 +5,7 @@
 ## 背景
 
 設計方針(#1)の「OSSとしてSelf-hostしやすくする」を満たす手段として、常駐サーバー(Docker等)を運用させるのではなく、
-CLIが `sources.yaml` を読み込んでOpenAPI一式をfetchし、Unified API Modelに変換した上で静的サイト(HTML/JS一式)を生成する方式にする。
+CLIが `sources.yaml` を読み込んでOpenAPI一式をfetchし、Unified Interface Modelに変換した上で静的サイト(HTML/JS一式)を生成する方式にする。
 生成された静的サイトはnginx/S3/GitHub Pagesなど任意の場所にそのまま配置すれば動く。
 
 ## やること
