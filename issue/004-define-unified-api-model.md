@@ -22,10 +22,6 @@ UIやTry it out機能はこのモデルにのみ依存し、protocol固有の詳
 `src/core/model.ts` に以下の最小限の型だけを定義した。
 
 ```ts
-export interface UnifiedInterfaceModel {
-  operations: InterfaceOperation[];
-}
-
 export interface InterfaceOperation {
   id: string;
   action: string;
@@ -34,6 +30,8 @@ export interface InterfaceOperation {
   deprecated?: boolean;
 }
 ```
+
+`UnifiedInterfaceModel { operations: InterfaceOperation[] }` というラッパー型も一度作ったが、`operations` 以外にフィールドが無く `InterfaceOperation[]` と実質同じだったため削除した。parser・site生成のどちらもまだ実装されておらず、ラッパーが必要かどうか判断する材料が無い状態だった。schemasなど他のトップレベル項目が実際に必要になったタイミングで、必要な形のラッパーを作る。
 
 当初、schemaを再帰的な判別可能union(object/array/ref/enum/...)として設計し、named ref解決の仕組みまで作っていたが、parserもUIもまだ存在しない段階でそこまでやるのは過剰だった。実装がないまま設計だけ進めると、実際にコードを書いた時に想定と違う部分が出て手戻りになる。そのため巻き戻し、parameters/request body/response/schema/enum/examplesは型として定義しない状態にした。これらは `005-implement-openapi-parser` で実際のOpenAPI specificationをパースしながら、`008-implement-api-detail-view` で実際にUIに表示しながら、必要になった時点で型を足していく。
 

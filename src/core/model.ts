@@ -1,7 +1,3 @@
-export interface UnifiedInterfaceModel {
-  operations: InterfaceOperation[];
-}
-
 export interface InterfaceOperation {
   id: string;
   action: string;
