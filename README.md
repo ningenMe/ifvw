@@ -1,4 +1,4 @@
-# ifvw (Interface Viewer)
+# ifvw
 
 interface定義を、1つのUIで閲覧できるviewer
 
