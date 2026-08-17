@@ -1,5 +1,4 @@
 export interface UnifiedInterfaceModel {
-  service: string;
   operations: InterfaceOperation[];
 }
 
