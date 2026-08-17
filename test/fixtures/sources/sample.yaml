@@ -1,0 +1,7 @@
+sources:
+  - name: user-service
+    type: openapi
+    url: https://user.example.com/openapi.json
+  - name: order-service
+    type: openapi
+    url: https://order.example.com/openapi.json
